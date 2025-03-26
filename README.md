@@ -1,23 +1,37 @@
 # Cancer-Classification
-
-## Breast Cancer Recurrence Prediction
-
-This repository contains a complete end-to-end machine learning project focused on predicting breast cancer recurrence. Using the Breast Cancer dataset from the UCI Machine Learning Repository, the project demonstrates data cleaning, preprocessing, handling class imbalance with SMOTE, and evaluating various classification algorithms.
+# Breast Cancer Classification
 
 ## Overview
+This project is a machine learning-based classification model for detecting breast cancer using the UCI Breast Cancer dataset. It applies various classification algorithms and evaluates their performance to determine the best model.
 
-- **Dataset:** The Breast Cancer dataset, originally created in 1988, comprises 286 instances described by 9 features. The dataset includes clinical and gynecological attributes such as age, tumor size, menopausal status, and more.
-- **Objective:** Predict the possibility of breast cancer recurrence in women using several machine learning algorithms.
-- **Techniques:** Data cleaning, feature engineering, SMOTE for oversampling, and model evaluation using accuracy metrics, confusion matrix, and classification reports.
+## Dataset
+The dataset used in this project is fetched from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29). It contains features extracted from digitized images of fine needle aspirates (FNA) of breast masses.
 
-## Data Acquisition
+## Project Workflow
+1. *Importing Required Libraries*
+2. *Loading the Dataset*
+3. *Data Cleaning and Preprocessing*
+4. *Exploratory Data Analysis (EDA) and Visualization*
+5. *Handling Class Imbalance using SMOTE*
+6. *Train-Test Split*
+7. *Model Training and Evaluation*
 
-The dataset is obtained using the `ucimlrepo` package:
+## Machine Learning Models Used
+The following classifiers are implemented and compared:
+- Decision Tree Classifier
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+- Random Forest Classifier
+- XGBoost Classifier
 
-```python
-from ucimlrepo import fetch_ucirepo
+## Evaluation Metrics
+Each model is evaluated based on the following metrics:
+- Accuracy Score
+- Confusion Matrix
+- Classification Report
 
-# Fetch dataset (ID: 14 corresponds to Breast Cancer)
-breast_cancer = fetch_ucirepo(id=14)
-X = breast_cancer.data.features
-y = breast_cancer.data.targets
+## Installation
+To run this project, install the necessary dependencies using:
+```bash
+pip install pandas numpy scikit-learn imbalanced-learn xgboost matplotlib seaborn ucimlrepo
